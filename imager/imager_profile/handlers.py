@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db.models.signals import post_save, pre_delete
 from django.dispatch import receiver
-from imager_app.models import ImagerAppProfile
+from imager_profile.models import ImagerAppProfile
 import logging
 
 logger = logging.getLogger(__name__)
