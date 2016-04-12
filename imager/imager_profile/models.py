@@ -54,6 +54,12 @@ class ImagerAppProfile(models.Model):
         choices=US_REGIONS
     )
 
+    objects = models.Manager()
+    active = ActiveProfileManager()
+
     @property
     def is_active(self):
         return self.user.is_active
+
+    def __str__(self):
+        return self.user.first_name, self.user.last_name

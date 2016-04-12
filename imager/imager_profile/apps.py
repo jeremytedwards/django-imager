@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class ImagerAppConfig(AppConfig):
+class ImagerProfileConfig(AppConfig):
     name = 'imager_profile'
 
     def ready(self):
