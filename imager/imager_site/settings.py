@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'imager_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jackbot',
+        'NAME': 'imager_mine',
         'USER': '',
         'PASSWORD': '',
         'HOST': '127.0.0.1',

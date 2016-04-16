@@ -8,7 +8,7 @@ import factory
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = UserProfile
+        model = User
 
 
 class ProfileTestCase2(TestCase):
