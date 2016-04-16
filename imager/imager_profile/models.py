@@ -32,34 +32,32 @@ US_REGIONS = [
 
 
 @python_2_unicode_compatible
-class ImagerAppProfile(models.Model):
+class UserProfile(models.Model):
+    """Create a unique profile for a user."""
+
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name='profile'
+        related_name="profile",
+        primary_key=True,
     )
-    camera_model = models.CharField(max_length=255)
-    nickname = models.CharField(max_length=64)
-    friends = models.ManyToManyField(
-        'self',
-        related_name='friend_of',
-        symmetrical=False
-    )
-    type_of_photography = models.CharField(
-        max_length=128,
-        choices=PHOTOGRAPHY_TYPES,
-    )
-    region = models.CharField(
-        max_length=3,
-        choices=US_REGIONS
-    )
+    camera_type = models.CharField(max_length=30, blank=True)
+    address = models.CharField(max_length=60, blank=True)
+    web_link = models.CharField(max_length=70, blank=True)
+    photo_type = models.CharField(max_length=30, blank=True)
+    social_media = models.CharField(max_length=30, blank=True)
+    region = models.CharField(max_length=30, choices=US_REGIONS,
+                              default='North America')
 
+    friends = models.ManyToManyField("self", symmetrical=False,
+                                     related_name='friend_of')
     objects = models.Manager()
     active = ActiveProfileManager()
 
     @property
     def is_active(self):
+        """Property to define if user is active."""
         return self.user.is_active
 
     def __str__(self):
-        return self.user.first_name, self.user.last_name
+        """Hand back username's profile."""
+        return "{}'s profile".format(self.user.username)

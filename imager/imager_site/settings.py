@@ -31,14 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'imager_profile',
+    'imager_images',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'imager_profile.apps.ImagerProfileConfig',
-    'imager_images.apps.ImagerImagesConfig',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -77,17 +78,13 @@ WSGI_APPLICATION = 'imager_site.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'USER': 'jackbot',
-    #     'NAME': 'db',
-    #     'TEST': {
-    #         'NAME': 'db_test',
-    #     },
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'jackbot',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

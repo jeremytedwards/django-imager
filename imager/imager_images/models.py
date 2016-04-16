@@ -17,6 +17,7 @@ def user_file_store_path(instance, filename):
     """File will be uploaded to MEDIA_ROOT/user_{id}/{filename}"""
     return "user_{0}/{1}".format(instance.user.id, filename)
 
+
 @python_2_unicode_compatible
 class Photo(models.Model):
     """Create photos for a user."""
