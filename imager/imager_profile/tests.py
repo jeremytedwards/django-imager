@@ -1,19 +1,14 @@
 from __future__ import unicode_literals
-from django.test import TestCase
 from django.contrib.auth.models import User
-from imager_profile.models import User, UserProfile
+from django.test import TestCase
+from imager.imager_profile.models import UserProfile
 
 import factory
 
 
 class UserFactory(factory.django.DjangoModelFactory):
-    """Define a User factory with a single user."""
     class Meta:
-        """Define a model instance class."""
-        model = User
-
-    username = 'bob'
-    email = 'bob@example.com'
+        model = UserProfile
 
 
 class ProfileTestCase2(TestCase):
