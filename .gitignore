@@ -22,6 +22,7 @@ pip-selfcheck.json
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+/share
 /include
 /bin
 
