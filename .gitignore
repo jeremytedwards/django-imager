@@ -7,6 +7,9 @@ __pycache__/
 # C extensions
 *.so
 
+/imager/.idea
+/include
+/share
 # Distribution / packaging
 .Python
 env/

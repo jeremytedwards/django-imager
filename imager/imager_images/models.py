@@ -27,8 +27,8 @@ class Photo(models.Model):
     title = models.CharField(max_length=30, blank=True)
     description = models.CharField(max_length=60, blank=True)
     file = models.ImageField(upload_to=user_file_store_path)
-    date_uploaded = models.DateTimeField(auto_now_add=True)
-    date_modified = models.DateTimeField(auto_now=True)
+    date_uploaded = models.DateTimeField(auto_now_add=True, auto_now=False)
+    date_modified = models.DateTimeField(auto_now_add=False, auto_now=True)
     date_published = models.DateTimeField(null=True, blank=True)
     published = models.CharField(max_length=30,
                                  choices=PUBLISH_CHOICES,
